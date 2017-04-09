@@ -1,0 +1,22 @@
+﻿@model IEnumerable<AcroGARC.Models.Courses>
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>Courses</h2>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Course</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var course in Model)
+            {
+                <tr><td>@course.Name</td></tr>
+            }
+        </tbody>
+
+</table>
