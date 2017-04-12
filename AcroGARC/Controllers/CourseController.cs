@@ -1,4 +1,5 @@
 ﻿using AcroGARC.Models;
+using AcroGARC.ViewModels;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
@@ -22,6 +23,74 @@ namespace AcroGARC.Controllers
             var Courses = _context.Courses.Include(d => d.Department).ToList();
 
             return View(Courses);
+        }
+
+
+        public ActionResult Create()
+        {
+            var department = _context.Departments.ToList();
+
+            var viewModel = new CourseViewModel
+            {
+                Departments = department,
+                Heading = "New Course"
+            };
+
+            return View("CourseForm", viewModel);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(CourseViewModel courseModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                courseModel.Departments = _context.Departments.ToList();
+
+                return View("CourseForm", courseModel);
+            }
+
+            var course = new Courses
+            {
+                Name = courseModel.Name,
+                DepartmentId = courseModel.DepartmentId,
+                Duration = courseModel.Duration,
+
+            };
+
+            _context.Courses.Add(course);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Course");
+        }
+
+
+        public ActionResult Edit(int courseId)
+        {
+            var dept = _context.Departments.ToList();
+
+            var course = _context.Courses.Include(c => c.Department).SingleOrDefault(c => c.Id == courseId);
+
+            if (course == null)
+                return HttpNotFound();
+
+            var viewModel = new CourseViewModel
+            {
+                Id = course.Id,
+                Name = course.Name,
+                DepartmentId = course.DepartmentId,
+                Duration = course.Duration,
+                Heading = "Edit Course",
+                Departments = dept
+            };
+
+            return View("CourseForm", viewModel);
+        }
+
+        public ActionResult Update(CourseViewModel ViewModel)
+        {
+            return View();
         }
     }
 }

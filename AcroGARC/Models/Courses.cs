@@ -15,5 +15,9 @@ namespace AcroGARC.Models
 
         [Required]
         public int DepartmentId { get; set; }
+
+        [Required]
+        [Range(2, 6)]
+        public byte Duration { get; set; }
     }
 }
