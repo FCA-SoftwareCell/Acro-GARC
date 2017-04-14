@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace AcroGARC.Controllers
 {
@@ -12,6 +8,7 @@ namespace AcroGARC.Controllers
         {
             return View();
         }
+
 
         public ActionResult About()
         {
