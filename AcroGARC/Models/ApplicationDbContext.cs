@@ -17,6 +17,8 @@ namespace AcroGARC.Models
 
         public DbSet<BatchRecord> BatchRecords { get; set; }
 
+        //public DbSet<CourseSemesterMap> CourseSemesterMap { get; set; }
+
         public ApplicationDbContext()
              : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -26,5 +28,6 @@ namespace AcroGARC.Models
         {
             return new ApplicationDbContext();
         }
+
     }
 }

@@ -92,5 +92,29 @@ namespace AcroGARC.Controllers
         {
             return View();
         }
+
+        //public ActionResult GetCourseClasses(int courseId)
+        //{
+        //    var semesters = _context.CourseSemesterMap.Include(s => s.Semester).Where(c => c.CourseId == courseId).ToList();
+        //    var course = _context.Courses.SingleOrDefault(c => c.Id == courseId);
+
+        //    var viewModel = new CourseSemesterViewModel
+        //    {
+        //        CourseSemesterList = semesters,
+        //        CourseName = course.Name
+        //    };
+
+        //    return View(viewModel);
+        //}
+
+        public ActionResult GetCourseClasses(int courseId)
+        {
+            var semester = _context.ClassStucture.Include(s => s.Semester).Where(a => a.CourseId == courseId).ToList();
+
+            return View(semester);
+        }
+
+
+
     }
 }

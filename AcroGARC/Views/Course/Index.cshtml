@@ -2,8 +2,11 @@
     @{
         ViewBag.Title = "Index";
     }
-
-    <h2>Courses</h2>
+        
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active">Courses</li>
+    </ol>
+    
     @Html.ActionLink("Create Course", "Create", "Course", null, new { @class = "btn btn-link" })
     <table class="table table-hover">
         <thead>
@@ -17,7 +20,10 @@
             @foreach (var course in Model)
             {
                 <tr>
-                    <td>@course.Name</td>
+                    <td>
+                        @Html.ActionLink(@course.Name, "GetCourseClasses", "Course",
+                       new { courseId = course.Id }, new { @class = "btn btn-link" })
+                    </td>
                     <td>@course.Duration Years</td>
                     <td>
                         @Html.ActionLink("Edit", "Edit", "Course",

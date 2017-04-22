@@ -185,6 +185,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\SemesterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -231,12 +232,15 @@
     <Compile Include="Models\BatchRecord.cs" />
     <Compile Include="Models\ClassStructure.cs" />
     <Compile Include="Models\Courses.cs" />
+    <Compile Include="Models\CourseSemesterMap.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Semester.cs" />
+    <Compile Include="Models\Subject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CourseSemesterViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -299,9 +303,13 @@
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
     <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\ManageUserRoles.cshtml" />
+    <Content Include="Views\Course\GetCourseClasses.cshtml" />
+    <Content Include="Views\Course\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Semester\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

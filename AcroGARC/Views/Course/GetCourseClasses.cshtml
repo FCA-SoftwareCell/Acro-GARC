@@ -1,0 +1,36 @@
+﻿@model IEnumerable<AcroGARC.Models.ClassStructure>
+@{
+    ViewBag.Title = "GetCourseClasses";
+}
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">@Html.ActionLink("Course", "Index", "Course")</li>
+    @*<li class="breadcrumb-item active">@Model.CourseName</li>*@
+    
+</ol>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Semester</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+            {
+            <tr>
+                <td>
+                    @obj.Semester.Name
+
+                </td>
+                <td>
+                    
+                </td>               
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+
