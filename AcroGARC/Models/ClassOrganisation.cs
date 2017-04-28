@@ -2,17 +2,19 @@
 
 namespace AcroGARC.Models
 {
-    public class Subject
+    public class ClassOrganisation
     {
         public int Id { get; set; }
 
         [Required]
-        [StringLength(126)]
-        public string Name { get; set; }
+        public string StudentId { get; set; }
+
+        public ApplicationUser Student { get; set; }
 
         [Required]
         public int ClassStructureId { get; set; }
 
         public ClassStructure ClassStructure { get; set; }
+
     }
 }

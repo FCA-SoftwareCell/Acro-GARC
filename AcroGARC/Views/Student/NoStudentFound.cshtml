@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Class Students";
+}
+
+<h2>Students</h2>
+@Html.ActionLink("Add Student", "Add", "Student", new { id = ViewBag.ClassStructureId }, new { @class = "btn btn-link" })
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+       {
+            <tr>
+                <td>
+                   <i class="glyphicon glyphicon-exclamation-sign" style="font-size:30px"></i>
+                </td>
+                <td>No Student Found</td>
+
+            </tr>
+        }
+    </tbody>
+</table>

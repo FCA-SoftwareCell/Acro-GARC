@@ -1,0 +1,30 @@
+﻿@model AcroGARC.ViewModels.StudentViewModel
+@{
+    ViewBag.Title = "Class Students";
+}
+
+<h2>Students</h2>
+@Html.ActionLink("Add Student", "Add", "Student",new {id= Model.classStructureId }, new { @class = "btn btn-link" })
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+       </tr>
+    </thead>
+    <tbody>
+        @foreach (var Student in Model.Students)
+            {
+                <tr>
+                    <td>
+                        @Student.FirstName  @Student.Lastname
+                    </td>
+                    <td>
+                       
+                    </td>
+                </tr>
+             }
+    </tbody>
+</table>
+
+
+

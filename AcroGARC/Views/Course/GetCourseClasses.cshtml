@@ -20,7 +20,7 @@
             {
             <tr>
                 <td>
-                    @obj.Semester.Name
+                   @Html.ActionLink(obj.Semester.Name,"Index","Class",new { id = obj.Id},null)
 
                 </td>
                 <td>

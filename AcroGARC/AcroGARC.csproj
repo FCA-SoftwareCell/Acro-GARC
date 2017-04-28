@@ -181,11 +181,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClassController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
-    <Compile Include="Controllers\SemesterController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -225,11 +226,24 @@
     <Compile Include="Migrations\201704131640440_addBatchRecord.Designer.cs">
       <DependentUpon>201704131640440_addBatchRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704281009510_addSubjects.cs" />
+    <Compile Include="Migrations\201704281009510_addSubjects.Designer.cs">
+      <DependentUpon>201704281009510_addSubjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704281721081_addedNewPropertyForUSer.cs" />
+    <Compile Include="Migrations\201704281721081_addedNewPropertyForUSer.Designer.cs">
+      <DependentUpon>201704281721081_addedNewPropertyForUSer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704281746556_addClassMigration.cs" />
+    <Compile Include="Migrations\201704281746556_addClassMigration.Designer.cs">
+      <DependentUpon>201704281746556_addClassMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Batch.cs" />
     <Compile Include="Models\BatchRecord.cs" />
+    <Compile Include="Models\ClassOrganisation.cs" />
     <Compile Include="Models\ClassStructure.cs" />
     <Compile Include="Models\Courses.cs" />
     <Compile Include="Models\CourseSemesterMap.cs" />
@@ -242,6 +256,8 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CourseSemesterViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
+    <Compile Include="ViewModels\StudentAddForm.cs" />
+    <Compile Include="ViewModels\StudentViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -305,11 +321,16 @@
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Role\ManageUserRoles.cshtml" />
     <Content Include="Views\Course\GetCourseClasses.cshtml" />
-    <Content Include="Views\Course\Test.cshtml" />
+    <Content Include="Views\Class\Dashboard.cshtml" />
+    <Content Include="Views\Student\ClassStudents.cshtml" />
+    <Content Include="Views\Student\NoStudentFound.cshtml" />
+    <Content Include="Views\Shared\StudentForm.cshtml" />
+    <Content Include="Views\Home\Student.cshtml" />
+    <Content Include="Views\Home\Faculty.cshtml" />
+    <Content Include="Views\Home\Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Semester\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -346,6 +367,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704131640440_addBatchRecord.resx">
       <DependentUpon>201704131640440_addBatchRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704281009510_addSubjects.resx">
+      <DependentUpon>201704281009510_addSubjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704281721081_addedNewPropertyForUSer.resx">
+      <DependentUpon>201704281721081_addedNewPropertyForUSer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704281746556_addClassMigration.resx">
+      <DependentUpon>201704281746556_addClassMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

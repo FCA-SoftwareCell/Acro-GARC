@@ -17,6 +17,10 @@ namespace AcroGARC.Models
 
         public DbSet<BatchRecord> BatchRecords { get; set; }
 
+        public DbSet<Subject> Subjects { get; set; }
+
+        public DbSet<ClassOrganisation> ClassOrganisation { get; set; }
+
         //public DbSet<CourseSemesterMap> CourseSemesterMap { get; set; }
 
         public ApplicationDbContext()

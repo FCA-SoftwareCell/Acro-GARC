@@ -109,9 +109,9 @@ namespace AcroGARC.Controllers
 
         public ActionResult GetCourseClasses(int courseId)
         {
-            var semester = _context.ClassStucture.Include(s => s.Semester).Where(a => a.CourseId == courseId).ToList();
+            var classData = _context.ClassStucture.Include(s => s.Semester).Where(a => a.CourseId == courseId).ToList();
 
-            return View(semester);
+            return View(classData);
         }
 
 

@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2>Manage Class</h2>
+
+<table class="class-dashboard">
+    <tr>
+        <td>
+            <i class="glyphicon glyphicon-user" style="font-size:60px"></i>
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.ActionLink("Student","Index","Student",new {id= ViewBag.Id },new { @style= "font-size:18px"})</td>
+    </tr>
+</table>
