@@ -10,8 +10,16 @@
         <td>
             <i class="glyphicon glyphicon-user" style="font-size:60px"></i>
         </td>
+        
+        <td>@Html.ActionLink("Student", "Index", "Student", new { id = ViewBag.Id }, new { @style = "font-size:18px" })</td>
+       
+        
     </tr>
     <tr>
-        <td>@Html.ActionLink("Student","Index","Student",new {id= ViewBag.Id },new { @style= "font-size:18px"})</td>
+        <td>
+            <i class="glyphicon glyphicon-book" style="font-size:60px"></i>
+        </td>
+        
+        <td>@Html.ActionLink("Manage Subjects", "Index", "Subject", new { id = ViewBag.Id }, new { @style = "font-size:18px" })</td>
     </tr>
 </table>

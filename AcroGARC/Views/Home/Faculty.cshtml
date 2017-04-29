@@ -1,75 +1,17 @@
-﻿@{
+﻿@model IEnumerable<AcroGARC.Models.Subject>
+@{
     ViewBag.Title = "faculty";
 }
 
-<h2>faculty</h2>
-<table style="width :80%">
-    <tr>
-        <td>Subject </td>
+<table class="class-dashboard">
+@foreach (var subject in Model)
+{   <tr>
         <td>
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                    Data Warehousing & Mining
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">HTML</a></li>
-                    <li><a href="#">CSS</a></li>
-                    <li><a href="#">JavaScript</a></li>
-                </ul>
-            </div>
+            <i class="glyphicon glyphicon-book" style="font-size:60px"></i>
         </td>
-        <td>Class </td>
         <td>
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                    MCA V Sem
-                    <span class="caret"></span>
-                </button>
-            </div>
-        </td>
-        <td>Batch </td>
-        <td>
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                    2014-17
-                    <span class="caret"></span>
-                </button>
-            </div>
+            <p>@subject.Name</p>
         </td>
     </tr>
+}
 </table>
-<br />
-<br />
-<br />
-
-<table style="width:100%">
-    <tr>
-        <td><i class="glyphicon glyphicon-list-alt" style="font-size:100px"></i></td>
-        <td><i class="glyphicon glyphicon-font" style="font-size:100px"></i></td>
-        <td><i class="glyphicon glyphicon-adjust" style="font-size:100px"></i></td>
-        <td><i class="glyphicon glyphicon-book" style="font-size:100px"></i></td>
-        <td><i class="glyphicon glyphicon-font" style="font-size:100px"></i></td>
-
-    </tr>
-    <tr>
-        <td>
-            Course Plan
-        </td>
-        <td>
-            Attendance
-        </td>
-        <td>
-            Course Coverage
-        </td>
-        <td>
-            Upload Notes
-        </td>
-        <td>
-            Allot Marks
-        </td>
-    </tr>
-</table>
-
-
-

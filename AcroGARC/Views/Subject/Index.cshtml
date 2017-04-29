@@ -1,0 +1,33 @@
+﻿@model IEnumerable<AcroGARC.Models.SubjectAllocation>
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.ActionLink("Assign Subject", "Add", "Subject", new { id=ViewBag.id}, new { @class = "btn btn-link" })
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Faculty Name</th>
+            <th>Subject</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+            {
+            <tr>
+                <td>
+                    @obj.Faculty.FirstName  @obj.Faculty.Lastname
+                </td>
+                <td>@obj.Subject.Name</td>
+                <td>
+                    @Html.ActionLink("Edit", "#", "#",
+                        null, new { @class = "btn btn-link" })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+

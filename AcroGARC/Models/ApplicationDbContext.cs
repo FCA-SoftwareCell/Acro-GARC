@@ -21,6 +21,8 @@ namespace AcroGARC.Models
 
         public DbSet<ClassOrganisation> ClassOrganisation { get; set; }
 
+        public DbSet<SubjectAllocation> SubjectAllocation { get; set; }
+
         //public DbSet<CourseSemesterMap> CourseSemesterMap { get; set; }
 
         public ApplicationDbContext()

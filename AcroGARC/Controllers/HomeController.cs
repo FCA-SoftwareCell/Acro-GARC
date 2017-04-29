@@ -1,4 +1,6 @@
 ﻿using AcroGARC.Models;
+using Microsoft.AspNet.Identity;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -14,12 +16,18 @@ namespace AcroGARC.Controllers
         }
         public ActionResult Index()
         {
-            var users = _context.Users.Where(u => u.Roles.Any(r => r.RoleId == "7b224a17-17e4-4611-88a9-13004bbda20e"));
+
 
             if (User.IsInRole("Faculty"))
-                return View("Faculty");
+            {
+                var userID = User.Identity.GetUserId();
 
-            return View(users);
+                var subjects = _context.SubjectAllocation.Include(i => i.Subject).Include(u => u.Faculty)
+                                .Where(u => u.Faculty.Id == userID).Select(a => a.Subject).ToList();
+
+                return View("Faculty", subjects);
+            }
+            return View();
         }
 
 
